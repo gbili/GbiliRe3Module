@@ -1,6 +1,6 @@
 <?php
 return [
     'invokables' => [
-        'scriptalicious' => '\Gbili\Stdlib\Scriptalicious', 
+        'Scriptalicious' => '\Gbili\Stdlib\Scriptalicious', 
     ],
 ];

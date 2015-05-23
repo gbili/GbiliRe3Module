@@ -24,10 +24,9 @@ class Re3 extends \Zend\View\Helper\AbstractHelper
 
     protected $symlink;
 
-    public function __construct()
+    public function __construct(\Gbili\Stdlib\Scriptalicious $scriptalicious)
     {
-        //TODO scriptalicious should be required from factory, to use the same everywhere
-        $this->scriptalicious = new \Gbili\Stdlib\Scriptalicious;
+        $this->scriptalicious = $scriptalicious;
     }
 
     /**

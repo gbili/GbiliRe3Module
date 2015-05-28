@@ -30,6 +30,16 @@ class Re3 extends \Zend\View\Helper\AbstractHelper
     }
 
     /**
+     * All required files in registerAndRender to call view
+     * methods
+     * @return mixed
+     */
+    public function __call($methodName, $params)
+    {
+        return call_user_func_array([$this->view, $methodName], $params);
+    }
+
+    /**
      * Given an identifier, return the associated content
      *
      * @param string
@@ -64,6 +74,7 @@ class Re3 extends \Zend\View\Helper\AbstractHelper
         }
 
         extract($params, EXTR_PREFIX_SAME, "scriptalicious");
+        $view = $this->view;
         require_once $symlinkedContentOrFile;
 
         if (!$this->scriptalicious->hasScript($scriptHandle)) {
